@@ -8,7 +8,6 @@ from linked_list import LinkedList, DoAn
 from file_handler import FileHandler
 from gui import AppGUI
 
-
 class Controller:
     def __init__(self):
         self.linked_list = LinkedList()
@@ -52,7 +51,7 @@ class Controller:
         if messagebox.askyesno("Xác nhận", f"Xóa {len(selected)} đồ án đã chọn?"):
             for item in selected:
                 values = self.gui.tree.item(item)["values"]
-                ma = values[1]                       # Mã đồ án ở index 1
+                ma = values[1]                       
                 self.linked_list.xoa(ma)
             FileHandler.save(self.linked_list)
             self.gui.refresh_table()
@@ -74,7 +73,6 @@ class Controller:
         self.gui.refresh_table(filtered)
 
     def sap_xep(self, choice):
-        """Sắp xếp theo lựa chọn"""
         sort_map = {
             "Mã đề tài": self.linked_list.sap_xep_merge_theo_ma,
             "MSSV": self.linked_list.sap_xep_merge_theo_mssv,
@@ -138,7 +136,6 @@ class Controller:
             messagebox.showerror("Lỗi", f"Lỗi khi xuất Excel:\n{str(e)}")
 
     def nhap_excel(self):
-        """Nhập dữ liệu từ file Excel"""
         try:
             file_path = filedialog.askopenfilename(
                 title="Chọn file Excel",
@@ -197,7 +194,6 @@ class Controller:
         except Exception as e:
             messagebox.showerror("Lỗi", f"Lỗi khi nhập Excel:\n{str(e)}")
     def show_modal(self, title, doan=None):
-        """Hiển thị form thêm / sửa đồ án"""
         modal = ctk.CTkToplevel(self.gui)
         modal.title(title)
         modal.geometry("720x700")
@@ -207,7 +203,6 @@ class Controller:
         fields = ["Mã Đề Tài", "Tên Đề Tài", "MSSV", "Họ tên SV", "Lớp", "GVHD", 
                   "Năm học", "Trạng thái", "Điểm"]
 
-        # Giá trị mặc định
         if doan:
             defaults = [doan.ma, doan.ten, doan.mssv, doan.hoten, doan.lop, 
                         doan.gvhd, doan.namhoc, doan.trangthai, f"{doan.diem:.1f}"]
@@ -241,7 +236,6 @@ class Controller:
                 entry.pack(side="left", fill="x", expand=True)
                 entries[field] = entry
 
-        # Nút Lưu
         ctk.CTkButton(modal, text="💾 Lưu", width=180, height=50,
                       font=ctk.CTkFont(size=16, weight="bold"),
                       command=lambda: self._save_from_modal(modal, entries, doan)
@@ -277,7 +271,7 @@ class Controller:
                 diem
             )
 
-            if doan is None:  # Thêm mới
+            if doan is None: 
                 if not doan_moi.ma:
                     raise ValueError("Mã đề tài không được để trống!")
                 if self.linked_list.them(doan_moi):
