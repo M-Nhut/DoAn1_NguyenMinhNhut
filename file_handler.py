@@ -6,7 +6,6 @@ class FileHandler:
 
     @staticmethod
     def save(linked_list):
-        """Lưu toàn bộ danh sách đồ án vào file"""
         os.makedirs("data", exist_ok=True)
         with open(FileHandler.FILE_PATH, "w", encoding="utf-8") as f:
             current = linked_list.head
@@ -19,7 +18,6 @@ class FileHandler:
 
     @staticmethod
     def load(linked_list):
-        """Load dữ liệu từ file vào LinkedList"""
         if not os.path.exists(FileHandler.FILE_PATH):
             print(f"Không tìm thấy file {FileHandler.FILE_PATH}. Bắt đầu với danh sách trống.")
             return
