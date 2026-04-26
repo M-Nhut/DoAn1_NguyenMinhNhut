@@ -23,14 +23,12 @@ class AppGUI(ctk.CTk):
         frame = ctk.CTkFrame(header, fg_color="#1e40af")
         frame.pack(expand=True)
 
-        try:
-            logo_img = ctk.CTkImage(light_image=Image.open("logo_dhdt.png"), size=(90, 90))
-            logo = ctk.CTkLabel(frame, image=logo_img, text="")
-            logo.image = logo_img
-            logo.pack(side="left", padx=(0, 30))
-        except:
-            ctk.CTkLabel(frame, text="🏛️", font=ctk.CTkFont(size=65)).pack(side="left", padx=(0, 30))
-
+       
+        logo_img = ctk.CTkImage(light_image=Image.open("logo_dhdt.png"), size=(90, 90))
+        logo = ctk.CTkLabel(frame, image=logo_img, text="")
+        logo.image = logo_img
+        logo.pack(side="left", padx=(0, 30))
+       
         title_frame = ctk.CTkFrame(frame, fg_color="#1e40af")
         title_frame.pack(side="left")
 
