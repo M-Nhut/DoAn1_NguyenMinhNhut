@@ -1,5 +1,4 @@
 class DoAn:
-    """Node của Danh sách liên kết đơn"""
     def __init__(self, ma: str, ten: str, mssv: str, hoten: str,
                  gvhd: str, lop: str, namhoc: str, trangthai: str, diem: float):
         self.ma = ma.strip()
@@ -13,7 +12,6 @@ class DoAn:
         self.diem = float(diem)
         self.next = None
 class LinkedList:
-    """Danh sách liên kết đơn - CTDL chính"""
     def __init__(self):
         self.head = None
 
