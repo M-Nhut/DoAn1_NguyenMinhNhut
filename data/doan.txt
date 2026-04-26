@@ -7,4 +7,4 @@ DA006|Chatbot hỗ trợ tư vấn tuyển sinh|K19404|Nguyễn Thị F|Nguyễn
 DA007|Hệ thống quản lý kho hàng|K19503|Vũ Minh Giang|Trần Thị Lan|CNTT4|2025-2026|Đã báo cáo|8.0
 DA008|Ứng dụng theo dõi sức khỏe|K19405|Đặng Thị Hương|Phạm Văn Hải|CNTT2|2024-2025|Đã hoàn thành|0.0
 DA009|Xây dựng website thương mại điện tử|K19504|Lê Văn Long|Phạm Thị Dung|CNTT3|2025-2026|Đã báo cáo|9.2
-DA11111|Ứng DỤng tiếng|việt0023411385|Nguyễn Văn D|BNGuyen TRong Nhan|DDHSTIN23B|2025-2026|Đang thực hiện|0.0
+
