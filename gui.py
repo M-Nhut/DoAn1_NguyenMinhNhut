@@ -95,21 +95,16 @@ class AppGUI(ctk.CTk):
             self.tree.heading(col, text=text)
             self.tree.column(col, width=w, anchor="center" if col in ["stt", "diem"] else "w")
 
-        # ====================== CHỈ GIỮ THANH CUỘN NGANG Ở DƯỚI ======================
         table_frame = ctk.CTkFrame(self)
         table_frame.pack(fill="both", expand=True, padx=15, pady=10)
 
-        # Treeview
         self.tree.pack(fill="both", expand=True)
-
-        # Thanh cuộn ngang nằm DƯỚI CÙNG bảng
+     
         h_scrollbar = ttk.Scrollbar(table_frame, orient="horizontal", command=self.tree.xview)
         h_scrollbar.pack(side="bottom", fill="x")
 
-        # Gắn thanh cuộn ngang vào Treeview
         self.tree.configure(xscrollcommand=h_scrollbar.set)
 
-        # Double click để sửa
         self.tree.bind("<Double-1>", lambda e: self.controller.sua())
     def refresh_table(self, data=None):
         for item in self.tree.get_children():
@@ -177,16 +172,16 @@ class AppGUI(ctk.CTk):
         card = ctk.CTkFrame(parent, fg_color="white", corner_radius=16, 
                            border_width=3, border_color=color, height=180)
         card.grid(row=row, column=col, padx=16, pady=16, sticky="nsew")
-        card.grid_propagate(False)   # Giữ chiều cao cố định
+        card.grid_propagate(False) 
 
-        # Tiêu đề
+
         ctk.CTkLabel(card, text=title, font=ctk.CTkFont(size=16, weight="bold")).pack(pady=(28, 6))
         
-        # Số liệu lớn
+
         ctk.CTkLabel(card, text=value, font=ctk.CTkFont(size=58, weight="bold"), 
                     text_color=color).pack(pady=4)
         
-        # Dòng chữ nhỏ phía dưới (subtext) để lấp khoảng trống
+
         ctk.CTkLabel(card, text="Tổng số đề tài hiện có", 
                     font=ctk.CTkFont(size=12), text_color="#64748b").pack()
 
