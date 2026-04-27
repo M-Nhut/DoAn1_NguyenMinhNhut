@@ -244,7 +244,6 @@ class Controller:
         self.toggle_diem_entry(entries)
 
     def _save_from_modal(self, modal, entries, doan=None):
-        """Xử lý logic lưu dữ liệu từ modal"""
         try:
             trang_thai = entries["Trạng thái"].get().strip()
             diem_str = entries["Điểm"].get().strip()
@@ -296,7 +295,6 @@ class Controller:
             messagebox.showerror("Lỗi", f"Có lỗi xảy ra: {str(e)}")
 
     def toggle_diem_entry(self, entries):
-        """Bật/tắt ô nhập điểm theo trạng thái"""
         trang_thai = entries["Trạng thái"].get()
         diem_entry = entries.get("Điểm")
         if not diem_entry:
