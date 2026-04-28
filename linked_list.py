@@ -84,7 +84,6 @@ class LinkedList:
         return result
 
     def merge_sort(self, head, key=lambda x: x.ma):
-        """Merge Sort chính cho Linked List"""
         if not head or not head.next:
             return head
 
@@ -98,7 +97,6 @@ class LinkedList:
         return self.sorted_merge(left, right, key)
 
     def get_middle(self, head):
-        """Tìm node giữa của danh sách"""
         if not head:
             return head
         slow = fast = head
@@ -108,7 +106,6 @@ class LinkedList:
         return slow
 
     def sorted_merge(self, left, right, key):
-        """Hợp nhất hai danh sách đã sắp xếp"""
         if not left:
             return right
         if not right:
@@ -147,7 +144,6 @@ class LinkedList:
             self.dao_nguoc()
 
     def dao_nguoc(self):
-        """Đảo ngược Linked List"""
         prev = None
         current = self.head
         while current:
